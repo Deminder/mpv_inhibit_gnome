@@ -2,7 +2,7 @@ TARGET = lib/mpv_inhibit_gnome.so
 SRC_DIR = src
 XDG_CONFIG_DIR := $(or $(XDG_CONFIG_HOME),$(HOME)/.config)
 
-C_FLAGS = -Wall -g -fPIC $(shell pkg-config --libs --cflags dbus-1)
+C_FLAGS = -Wall -Iinclude -g -fPIC $(shell pkg-config --libs --cflags dbus-1)
 
 SRCS := $(shell find $(SRC_DIR) -name *.c)
 OBJS := $(patsubst src/%.c,build/%.o,$(SRCS))
